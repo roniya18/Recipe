@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>734187454985-90hbokac8gcn2d2oks8ud2u6qbh9b8fk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.734187454985-90hbokac8gcn2d2oks8ud2u6qbh9b8fk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCBST_F1F-KhPgZOtuHNILJNAZ6IGVitEw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>734187454985</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rony.Cheffy</string>
+	<key>PROJECT_ID</key>
+	<string>cheffy-eaa95</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cheffy-eaa95.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:734187454985:ios:82f2b63f079e1270b9eed8</string>
+</dict>
+</plist>
