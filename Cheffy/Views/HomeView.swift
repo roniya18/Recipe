@@ -31,7 +31,7 @@ struct HomeView: View {
             ScrollView{
                 VStack(alignment: .leading){
                     HStack{
-                        Text("Welcome Rony!")
+                        Text("Welcome!")
                             .bold()
                             .font(.system(size: 25))
                             .padding(.vertical,20)

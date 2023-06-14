@@ -27,7 +27,7 @@ class RecipeViewModel: ObservableObject{
     
     @Published var image = ""
     @Published var recipeName = ""
-    @Published var category = ""
+    @Published var category = "Breakfast"
     @Published var description = ""
     @Published var ingrediants = ""
     

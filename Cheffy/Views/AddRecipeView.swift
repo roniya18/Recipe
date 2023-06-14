@@ -15,6 +15,7 @@ import FirebaseFirestoreSwift
 
 struct AddRecipeView: View {
     
+    @State var categories = ["Breakfast","Lunch","Drinks","Pastas","Salad","Deserts","Soup"]
     @StateObject var viewModel = RecipeViewModel.shared
     @StateObject var imagePicker = ImagePicker()
     @State var isAlertOn : Bool = false
@@ -61,32 +62,30 @@ struct AddRecipeView: View {
                         }
           
             Group{
-                TextField("Name", text: $viewModel.recipeName)
-                    .padding()
-                    .frame(width: 300,height: 40)
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(5)
-                    .padding(.vertical)
-                TextField("Category", text: $viewModel.category)
-                    .padding()
-                    .frame(width: 300,height: 40)
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(5)
-                    .padding(.vertical)
-                TextField("Description", text:$viewModel.description)
-                    .padding()
-                    .frame(width: 300,height: 40)
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(5)
-                    .padding(.vertical)
-                TextField("Ingrediants", text:$viewModel.ingrediants)
-                    .padding()
-                    .frame(width: 300,height: 40)
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(5)
-                    .padding(.vertical)
+                FieldView(placeHolder: "Name", variable: $viewModel.recipeName)
+                   
+                Menu{
+                    Picker(selection: $viewModel.category,
+                           label:Text("Categories"),
+                           content: {
+                        ForEach(categories, id: \.self) { options in
+                            Text(options).tag(options)
+                        }
+                    })
+                }label: {
+                    Text(viewModel.category)
+                        .foregroundColor(Color.secondary)
+                        .multilineTextAlignment(.leading)
+                        .frame(width: 300,height: 40)
+                        .background(Color(.tertiarySystemFill))
+                        .cornerRadius(5)
+                        .padding(.vertical)
+                }
+                
+                FieldView(placeHolder: "Description", variable: $viewModel.description)
+                FieldView(placeHolder: "Ingrediants", variable: $viewModel.ingrediants)
+                    
             }
-            
             
             Button(action: {
                 if viewModel.recipeName == nil || viewModel.ingrediants == nil || viewModel.description == nil || viewModel.category == nil || imagePicker.image == nil {
@@ -135,5 +134,19 @@ struct AddRecipeView: View {
 struct AddRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         AddRecipeView()
+    }
+}
+
+struct FieldView: View {
+    var placeHolder : String
+    @Binding var variable : String
+    var body: some View {
+        TextField(placeHolder, text: $variable, axis: .vertical)
+            .lineLimit(4)
+            .padding(.leading,20)
+            .frame(width: 300,height: 40)
+            .background(Color(.tertiarySystemFill))
+            .cornerRadius(5)
+            .padding(.vertical)
     }
 }
